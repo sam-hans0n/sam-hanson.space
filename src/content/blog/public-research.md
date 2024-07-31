@@ -14,6 +14,7 @@ tags:
   - PIPEDREAM
   - COSMICENERGY
   - MOUSEHOLE
+  - Sality
   - Dragos
 description: Please see this page for complete listing of public research in the form of blogs, whitepapers, and webinars.
 ---
