@@ -39,6 +39,7 @@ Here are malware analysis projects I've worked on as a reverse engineer at Drago
 
 For a full listing of CVEs I've discovered, please see my ["CVEs Discovered"](/posts/cves-discovered/) page.
 
+- [Root Cause Analysis of Password "Cracking" Vulnerabilities Section, Dragos Year-in-Review 2022](https://hub.dragos.com/hubfs/312-Year-in-Review/2022/Dragos_Year-In-Review-Report-2022.pdf?hsLang=en) (starts on p.37)
 - Dragos 2021: [Examining ICS Vulnerabilities Webinar](https://www.youtube.com/watch?v=cBxtp2F5T_I)
 - Dragos 2020: [Examining ICS Vulnerabilities Webinar](https://www.youtube.com/watch?v=W4SMVY1UbOQ)
 
