@@ -1,7 +1,7 @@
 ---
 author: Sam Hanson
-pubDatetime: 2024-07-15T13:05:56.066Z
-modDatetime: 2024-07-15T13:05:56.066Z
+pubDatetime: 2024-07-15T15:15:40.021Z
+modDatetime: 2024-07-15T15:15:40.021Z
 title: CVEs Discovered
 slug: cves-discovered
 featured: true

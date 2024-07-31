@@ -1,7 +1,7 @@
 ---
 author: Sam Hanson
-pubDatetime: 2024-07-15T13:05:56.066Z
-modDatetime: 2024-07-15T13:05:56.066Z
+pubDatetime: 2024-07-17T11:43:26.066Z
+modDatetime: 2024-07-17T11:43:26.066Z
 title: Public Research
 slug: public-reseearch
 featured: true
