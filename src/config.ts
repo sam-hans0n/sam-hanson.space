@@ -18,7 +18,7 @@ export const LOCALE = {
 
 // Don't need a logo, disabling.
 export const LOGO_IMAGE = {
-  enable: false,
+  false: true,
   svg: true,
   width: 216,
   height: 46,
