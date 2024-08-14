@@ -51,7 +51,7 @@ I've presented at several in person conferences, including:
 
 - Dragos DISC'23: When Pythons Attack: The Hunting and Analysis of ICS-related, Compiled Python Samples
 - Dragos DISC'23: PIPEDREAM Analysis
-- [Dragos DISC'22: Malware, 0 Days, and PLCs, Oh Boy!](/src/assets/bszh22-Sam_Hanson-Malware-Zero-Days-and-PLCs-Oh-Boy.pdf)
+- [Dragos DISC'22: Malware, 0 Days, and PLCs, Oh Boy!](/assets/bszh22-Sam_Hanson-Malware-Zero-Days-and-PLCs-Oh-Boy.pdf)
 - BSides:Zurich: PLC Password Cracking Malware
 
 Unfortunately, some of these were private conferences with sensitive information, so I am unable to share the all slides.
