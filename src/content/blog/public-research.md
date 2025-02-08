@@ -3,7 +3,7 @@ author: Sam Hanson
 pubDatetime: 2024-07-17T11:43:26.066Z
 modDatetime: 2024-07-17T11:43:26.066Z
 title: Public Research
-slug: public-reseearch
+slug: public-research
 featured: true
 draft: false
 tags:
@@ -16,6 +16,7 @@ tags:
   - MOUSEHOLE
   - Sality
   - Dragos
+  - DLL Hijacking
 description: Please see this page for complete listing of public research in the form of blogs, whitepapers, and webinars.
 ---
 
@@ -39,6 +40,7 @@ Here are malware analysis projects I've worked on as a reverse engineer at Drago
 
 For a full listing of CVEs I've discovered, please see my ["CVEs Discovered"](/posts/cves-discovered/) page.
 
+- [Suggested Practices to Defend Against DLL Hijacking](https://hub.dragos.com/hubfs/116-Whitepapers/Dragos_WP_DLL_Hijacking_FINAL.pdf?hsLang=en)
 - [Root Cause Analysis of Password "Cracking" Vulnerabilities Section, Dragos Year-in-Review 2022](https://hub.dragos.com/hubfs/312-Year-in-Review/2022/Dragos_Year-In-Review-Report-2022.pdf?hsLang=en) (starts on p.37)
 - Dragos 2021: [Examining ICS Vulnerabilities Webinar](https://www.youtube.com/watch?v=cBxtp2F5T_I)
 - Dragos 2020: [Examining ICS Vulnerabilities Webinar](https://www.youtube.com/watch?v=W4SMVY1UbOQ)

@@ -22,12 +22,15 @@ For in-depth analysis, check out these whitepapers on Fuxnet, co-written by me a
 
 # Fuxnet Malware
 
-<div>
-  <img src="/assets/facebook-hacked-moskollektor.png" class="sm:w-1/2 mx-auto" alt="password cracking software advertisement">
-</div>
-
 In April of 2024, BlackJack (a self-proclaimed hacktivist group) announced compromise of Moskollektor, a
-Russian municipal organization in the Moscow area. They are responsible for running Moscow's utility tunnels, an underground network of cables and pipes.
+Russian municipal organization in the Moscow area. They are responsible for running Moscow's utility tunnels, an underground network of communication cables and hot/cold water pipes.
+
+<div>
+  <figure>
+  <img src="/assets/collector-station.png" class="sm:w-1/2 mx-auto" alt="Moskollektor collector station">
+  <center><figcaption>Example underground tunnel</figcaption></center>
+  </figure>
+</div>
 
 BlackJack <i>did not</i> provide samples of the malware used. Consequently, analysts can only analyze the
 data provided by the group. All data provided by BlackJack appear legitimate, but we must approach
@@ -42,10 +45,10 @@ of Fuxnet's source code (provided by BlackJack), the capability can be split int
 
 <div>
   <figure>
-  <img src="/assets/fuxnet_source_mbus_packet.png" class="sm:w-1/2 mx-auto" alt="password cracking software advertisement">
+  <img src="/assets/fuxnet_source_mbus_packet.png" class="sm:w-1/2 mx-auto" alt="Fuxnet Meter-bus source code">
   <center><figcaption>Meter-bus packet generation with fuzzing.</figcaption></center>
   </figure>
 </div>
 
 Due to the inclusion of the Meter-bus functionality, Fuxnet as deployed is an offensive action on an
-industrial asset, therefore counting as ICS-specific malware.
+industrial asset, therefore counting$$ as ICS-specific malware.

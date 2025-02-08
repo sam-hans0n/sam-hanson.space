@@ -25,7 +25,7 @@ I love any technical aspect of cybersecurity, malware analysis and vulnerability
 
 ## Work History
 
-Please see my ["Public Research"](/posts/public-reseearch/) page for complete list.
+Please see my ["Public Research"](/posts/public-research/) page for complete list.
 
 <br></br>
 
