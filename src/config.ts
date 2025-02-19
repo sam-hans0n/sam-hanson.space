@@ -7,7 +7,7 @@ export const SITE: Site = {
   title: "Sam Hanson",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
-  postPerPage: 4,
+  postPerPage: 6,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 
@@ -48,6 +48,12 @@ export const SOCIALS: SocialObjects = [
     href: "mailto:yourmail@gmail.com",
     linkTitle: `Send an email to ${SITE.title}`,
     active: false,
+  },
+  {
+    name: "Bluesky",
+    href: "https://bsky.app/profile/sam-hans0n.bsky.social",
+    linkTitle: `${SITE.title} on Bluesky`,
+    active: true,
   },
   {
     name: "Twitter",
