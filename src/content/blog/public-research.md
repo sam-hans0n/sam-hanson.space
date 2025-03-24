@@ -17,10 +17,13 @@ tags:
   - Sality
   - Dragos
   - DLL Hijacking
+  - KurtLar_SCADA
 description: Please see this page for complete listing of public research in the form of blogs, whitepapers, and webinars.
 ---
 
 # Complete listing of public research
+
+<br>
 
 ## Malware Analysis
 
@@ -42,8 +45,6 @@ For a full listing of CVEs I've discovered, please see my ["CVEs Discovered"](/p
 
 - [Suggested Practices to Defend Against DLL Hijacking](https://hub.dragos.com/hubfs/116-Whitepapers/Dragos_WP_DLL_Hijacking_FINAL.pdf?hsLang=en)
 - [Root Cause Analysis of Password "Cracking" Vulnerabilities Section, Dragos Year-in-Review 2022](https://hub.dragos.com/hubfs/312-Year-in-Review/2022/Dragos_Year-In-Review-Report-2022.pdf?hsLang=en) (starts on p.37)
-- Dragos 2021: [Examining ICS Vulnerabilities Webinar](https://www.youtube.com/watch?v=cBxtp2F5T_I)
-- Dragos 2020: [Examining ICS Vulnerabilities Webinar](https://www.youtube.com/watch?v=W4SMVY1UbOQ)
 
 <br></br>
 
@@ -58,6 +59,17 @@ I've presented at several in person conferences, including:
 - BSides Zurich: PLC Password Cracking Malware
 
 Unfortunately, some of these were private conferences with sensitive information, so I am unable to share the all slides.
+
+<br>
+
+## Webinars
+
+I've also participated in a variety of webinars:
+
+- SANS ICS: [The Story of KurtLar_SCADA - From Malware Discovery to Victim Notification](/Story_of_KurtLar_SCADA_SANS_ICS.pdf)
+- University of New Hampshire: ICS/OT Cybersecurity, Malware Threats Examined & Explained
+- Dragos 2021: [Examining ICS Vulnerabilities Webinar](https://www.youtube.com/watch?v=cBxtp2F5T_I)
+- Dragos 2020: [Examining ICS Vulnerabilities Webinar](https://www.youtube.com/watch?v=W4SMVY1UbOQ)
 
 <br></br>
 

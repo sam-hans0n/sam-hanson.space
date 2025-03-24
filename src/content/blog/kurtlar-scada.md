@@ -61,7 +61,7 @@ To prove their tool works, they provide multiple screenshots of compromised HMI 
 There's even a video of the developers using and compromising HMIs:
 
   <figure>
-    <video width="700" height="450" controls> <source src="/assets/kurtlar_scada_demo.MP4" type="video/mp4" class="sm:w-1/2 mx-auto"/>
+    <video width="700" height="450" controls class="sm:w-1/1 mx-auto" > <source src="/assets/kurtlar_scada_demo.MP4" type="video/mp4" />
     </video>
     <center><figcaption>Warning: loud, obnoxious hacker music</figcaption></center>
   </figure>
