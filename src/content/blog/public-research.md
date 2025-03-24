@@ -67,7 +67,7 @@ Unfortunately, some of these were private conferences with sensitive information
 I've also participated in a variety of webinars:
 
 - SANS ICS: [The Story of KurtLar_SCADA - From Malware Discovery to Victim Notification](/Story_of_KurtLar_SCADA_SANS_ICS.pdf)
-- University of New Hampshire: ICS/OT Cybersecurity, Malware Threats Examined & Explained
+- University of New Hampshire: [ICS/OT Cybersecurity, Malware Threats Examined & Explained](https://www.usnh.edu/it/blog/2022/09/gsc-tech-briefing-know-do-092222)
 - Dragos 2021: [Examining ICS Vulnerabilities Webinar](https://www.youtube.com/watch?v=cBxtp2F5T_I)
 - Dragos 2020: [Examining ICS Vulnerabilities Webinar](https://www.youtube.com/watch?v=W4SMVY1UbOQ)
 
