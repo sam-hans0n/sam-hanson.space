@@ -1,7 +1,7 @@
 ---
 author: Sam Hanson
 pubDatetime: 2025-03-23T16:05:22.042Z
-modDatetime: 2025-02-23T16:05:22.042Z
+modDatetime: 2025-04-08T16:05:22.042Z
 title: The Story of KurtLar_SCADA.exe
 slug: kurtlar-scada
 featured: true
@@ -15,7 +15,9 @@ description: Check out my research in uncovering and analyzing a malware named K
 
 # From Malware Discovery to Victim Notification
 
-Check out my [SANS ICS webcast](https://www.sans.org/webcasts/story-kurtlar-scada-malware-discovery-victim-disclosure/)!
+Super appreciate of [SANS ICS for hosting](https://www.sans.org/webcasts/story-kurtlar-scada-malware-discovery-victim-disclosure/), check out [my slides here](/Story_of_KurtLar_SCADA_SANS_ICS.pdf)!
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/Ty7VCui0ilo?si=p-MW0h3Au7Mi3UjW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
 
 <br>
 
