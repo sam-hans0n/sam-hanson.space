@@ -51,4 +51,4 @@ of Fuxnet's source code (provided by BlackJack), the capability can be split int
 </div>
 
 Due to the inclusion of the Meter-bus functionality, Fuxnet as deployed is an offensive action on an
-industrial asset, therefore counting$$ as ICS-specific malware.
+industrial asset, therefore counting as ICS-specific malware.

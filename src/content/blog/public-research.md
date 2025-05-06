@@ -37,7 +37,7 @@ Here are malware analysis projects I've worked on as a reverse engineer at Drago
 - [PIPEDREAM Webinar](https://hub.dragos.com/on-demand/pipedream-malware-chernovite-activity-group)
 - [The Trojan Horse Malware & Password "Cracking" Ecosystem Targeting Industrial Operators](https://www.dragos.com/blog/the-trojan-horse-malware-password-cracking-ecosystem-targeting-industrial-operators/)
 
-<br></br>
+---
 
 ## Vulnerability Research
 
@@ -46,21 +46,27 @@ For a full listing of CVEs I've discovered, please see my ["CVEs Discovered"](/p
 - [Suggested Practices to Defend Against DLL Hijacking](https://hub.dragos.com/hubfs/116-Whitepapers/Dragos_WP_DLL_Hijacking_FINAL.pdf?hsLang=en)
 - [Root Cause Analysis of Password "Cracking" Vulnerabilities Section, Dragos Year-in-Review 2022](https://hub.dragos.com/hubfs/312-Year-in-Review/2022/Dragos_Year-In-Review-Report-2022.pdf?hsLang=en) (starts on p.37)
 
-<br></br>
+---
 
 ## Conferences
 
 I've presented at several in person conferences, including:
 
 - [BSides Twin Cities: History of ICS-Specific Malware](/BSides-TC.pdf)
-- Dragos DISC'23: When Pythons Attack: The Hunting and Analysis of ICS-related, Compiled Python Samples
-- Dragos DISC'23: PIPEDREAM Analysis
-- [Dragos DISC'22: Malware, 0 Days, and PLCs, Oh Boy!](/bszh22-Sam_Hanson-Malware-Zero-Days-and-PLCs-Oh-Boy.pdf)
-- BSides Zurich: PLC Password Cracking Malware
+- Dragos:
+  - DISC '24: Hunting for Future ICS Threats
+  - DISC'23: When Pythons Attack: The Hunting and Analysis of ICS-related, Compiled Python Samples
+  - DISC'23: PIPEDREAM Analysis
+  - DISC'22: Malware, 0 Days, and PLCs, Oh Boy!
+- [BSides Zurich: PLC Password Cracking Malware](/bszh22-Sam_Hanson-Malware-Zero-Days-and-PLCs-Oh-Boy.pdf)
 
 Unfortunately, some of these were private conferences with sensitive information, so I am unable to share the all slides.
 
 <br>
+
+I also am one of the organizers of [BSides Twin Cities](https://bsidestc.org), an annual conference held in Minneapolis, MN in early October. Please check out the site for more information, it's a great con!
+
+---
 
 ## Webinars
 
@@ -71,7 +77,7 @@ I've also participated in a variety of webinars:
 - Dragos 2021: [Examining ICS Vulnerabilities Webinar](https://www.youtube.com/watch?v=cBxtp2F5T_I)
 - Dragos 2020: [Examining ICS Vulnerabilities Webinar](https://www.youtube.com/watch?v=W4SMVY1UbOQ)
 
-<br></br>
+---
 
 ## Media Coverage
 
