@@ -13,11 +13,34 @@ tags:
 description: Check out my research in uncovering and analyzing a malware named KurtLar_SCADA.exe, a VNC remote access capability targeting Internet-exposed and poorly secured industrial HMIs. This research was covered in a webinar hosted by SANS ICS. Big thanks to them for having me!
 ---
 
+<style>
+.video-container {
+  position: relative;
+  width: 100%; /* Full width for responsiveness */
+  max-width: 560px; /* Optional: Limit the maximum width */
+  padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  margin: 0 auto; /* Center the video */
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure iframe scales with container */
+  height: 100%;
+  border: 0; /* Remove any default borders */
+}
+</style>
+
 # From Malware Discovery to Victim Notification
 
 Super appreciate of [SANS ICS for hosting](https://www.sans.org/webcasts/story-kurtlar-scada-malware-discovery-victim-disclosure/), check out [my slides here](/Story_of_KurtLar_SCADA_SANS_ICS.pdf)!
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/Ty7VCui0ilo?si=p-MW0h3Au7Mi3UjW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+<center class="video-container">
+  <iframe src="https://www.youtube.com/embed/Ty7VCui0ilo?si=p-MW0h3Au7Mi3UjW" title="SANS ICS - The Story of KurtLar_SCADA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</center>
 
 <br>
 
