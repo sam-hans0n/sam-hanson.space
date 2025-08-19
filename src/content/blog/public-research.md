@@ -21,10 +21,6 @@ tags:
 description: Please see this page for complete listing of public research in the form of blogs, whitepapers, and webinars.
 ---
 
-# Complete listing of public research
-
-<br>
-
 ## Malware Analysis
 
 Here are malware analysis projects I've worked on as a reverse engineer at Dragos:
@@ -52,6 +48,7 @@ For a full listing of CVEs I've discovered, please see my ["CVEs Discovered"](/p
 
 I've presented at several in person conferences, including:
 
+- DEF CON 33: Don't Cry Wolf: Evidence-based Assessments of ICS Threats
 - [BSides Twin Cities: History of ICS-Specific Malware](/BSides-TC.pdf)
 - Dragos:
   - DISC '24: Hunting for Future ICS Threats
