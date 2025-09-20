@@ -1,7 +1,7 @@
 ---
 author: Sam Hanson
-pubDatetime: 2025-08-26T22:05:22.042Z
-modDatetime: 2025-08-26T22:05:22.042Z
+pubDatetime: 2025-09-20T22:05:22.042Z
+modDatetime: 2025-09-20T22:05:22.042Z
 title: The Bot(net) that Got Away
 slug: the-botnet-that-got-away
 featured: false
