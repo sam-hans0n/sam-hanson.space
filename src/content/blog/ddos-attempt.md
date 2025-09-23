@@ -4,7 +4,7 @@ pubDatetime: 2025-09-20T22:05:22.042Z
 modDatetime: 2025-09-20T22:05:22.042Z
 title: The Bot(net) that Got Away
 slug: the-botnet-that-got-away
-featured: false
+featured: true
 draft: false
 tags:
   - Distributed Denial of Service (DDoS)
