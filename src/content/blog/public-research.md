@@ -21,6 +21,10 @@ tags:
 description: Please see this page for complete listing of public research in the form of blogs, whitepapers, and webinars.
 ---
 
+## Threat Hunting
+
+- [Hunting Beyond Indicators](https://substack.com/home/post/p-175671802): Guest Blog for the THOR Collective.
+
 ## Malware Analysis
 
 Here are malware analysis projects I've worked on as a reverse engineer at Dragos:
@@ -48,6 +52,7 @@ For a full listing of CVEs I've discovered, please see my ["CVEs Discovered"](/p
 
 I've presented at several in person conferences, including:
 
+- HOU.SEC.CON: Hunting for OT Pythons and Gophers - Playbooks for Binary Triage
 - DEF CON 33: Don't Cry Wolf: Evidence-based Assessments of ICS Threats
 - [BSides Twin Cities: History of ICS-Specific Malware](/BSides-TC.pdf)
 - Dragos:

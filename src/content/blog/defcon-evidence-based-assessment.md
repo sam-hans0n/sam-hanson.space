@@ -1,9 +1,9 @@
 ---
 author: Sam Hanson
-pubDatetime: 2025-10-17T19:05:22.042Z
+pubDatetime: 2025-10-17T19:05:22.000Z
 title: Don't Cry Wolf - Evidence-based Assessments of ICS Threats
 slug: defcon-evidence-based-assessment
-featured: true
+featured: false
 draft: false
 tags:
   - Malware Analysis
