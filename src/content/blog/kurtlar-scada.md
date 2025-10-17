@@ -4,7 +4,7 @@ pubDatetime: 2025-03-23T16:05:22.042Z
 modDatetime: 2025-04-08T16:05:22.042Z
 title: The Story of KurtLar_SCADA.exe
 slug: kurtlar-scada
-featured: true
+featured: false
 draft: false
 tags:
   - Malware Analysis
