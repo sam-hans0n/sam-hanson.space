@@ -52,8 +52,8 @@ For a full listing of CVEs I've discovered, please see my ["CVEs Discovered"](/p
 
 I've presented at several in person conferences, including:
 
-- HOU.SEC.CON: Hunting for OT Pythons and Gophers - Playbooks for Binary Triage
-- DEF CON 33: Don't Cry Wolf: Evidence-based Assessments of ICS Threats
+- [HOU.SEC.CON: Hunting for OT Pythons and Gophers - Playbooks for Binary Triage](https://www.youtube.com/watch?v=R8xFGz-AGEE)
+- [DEF CON 33: Don't Cry Wolf: Evidence-based Assessments of ICS Threats](https://www.youtube.com/embed/6U_CepoMSl4?si=FRzmDYQyY7Xs-iZu)
 - [BSides Twin Cities: History of ICS-Specific Malware](/BSides-TC.pdf)
 - Dragos:
   - DISC '24: Hunting for Future ICS Threats
