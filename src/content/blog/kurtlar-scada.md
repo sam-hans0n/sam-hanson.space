@@ -35,18 +35,17 @@ description: Check out my research in uncovering and analyzing a malware named K
 
 # From Malware Discovery to Victim Notification
 
-Super appreciate of [SANS ICS for hosting](https://www.sans.org/webcasts/story-kurtlar-scada-malware-discovery-victim-disclosure/), check out [my slides here](/Story_of_KurtLar_SCADA_SANS_ICS.pdf)!
+I'm super appreciative of [SANS ICS for hosting](https://www.sans.org/webcasts/story-kurtlar-scada-malware-discovery-victim-disclosure/). You can check out [my slides here](/Story_of_KurtLar_SCADA_SANS_ICS.pdf)!
 
 <center class="video-container">
   <iframe src="https://www.youtube.com/embed/Ty7VCui0ilo?si=p-MW0h3Au7Mi3UjW" title="SANS ICS - The Story of KurtLar_SCADA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
 </center>
 
 <br>
 
 ## Introduction
 
-Part of my responsibilities at Dragos include threat hunting in public malware repositories such as VirusTotal. During an investigation into ICS/OT related filenames submitted from geopolitical hot bed zones, one file immediately caught my eye.
+Part of my responsibilities at Dragos include threat hunting in public malware repositories such as VirusTotal. During an investigation into ICS/OT-related filenames submitted from geopolitical hotspots, one file immediately caught my eye.
 
 <div>
   <figure>
@@ -135,27 +134,27 @@ with open("./kurtlar_scada.pyc", "wb") as pyc_file:
     f.write(bytecode)
 ```
 
-Using a combination of static analysis of the bytecode disassembly, as well as leveraging LLMs like ChatGPT/PyLingual, we can slowly decipher it's execution flow. Perhaps in a future blog I will cover compiled python and bytecode more in detail, but for another day!
+Using a combination of static analysis of the bytecode disassembly, along with LLMs like ChatGPT/PyLingual, we can slowly decipher its execution flow. Perhaps in a future blog I will cover compiled Python and bytecode in more detail, but that's for another day.
 
 <br>
 
 ## Alerting the Victims
 
-Leveraging Dragos' OT-CERT, we made contact with CISA and a couple other external parties. Through these relationships, we informed 3 victims of their compromised, exposed, and poorly secured assets. The responses ranged from gratitude (and further leveraging CISAs services) to indifference. 'Tis the name of the game, you can lead a horse to water but you can't force it to drink.
+Leveraging Dragos' OT-CERT, we made contact with CISA and a couple of other external parties. Through these relationships, we informed three victims of their compromised, exposed, and poorly secured assets. The responses ranged from gratitude, and further use of CISA's services, to indifference. 'Tis the name of the game: you can lead a horse to water, but you can't force it to drink.
 
 <br>
 
 ## Conclusion
 
-KurtLar_SCADA is another example of low-skilled, opportunistic hacktivists leveraging "low-hanging fruit" techniques. This is a threat the should <i>not</i> be hyped. However, these techniques are still effective if you leave HMIs exposed to the internet and poorly secured. Please use a VPN, do not port forward remote access services like VNC.
+KurtLar_SCADA is another example of low-skilled, opportunistic hacktivists leveraging "low-hanging fruit" techniques. This is a threat that should <i>not</i> be hyped. However, these techniques are still effective if you leave HMIs exposed to the internet and poorly secured. Please use a VPN, and do not port-forward remote-access services like VNC.
 
-This type of activity could be reduced significantly if vendors were incentivized to care about security. One of vendors who produced the software which was compromised by KurtLar_SCADA had this to say on their VNC security page...
+This type of activity could be reduced significantly if vendors were incentivized to care about security. One of the vendors whose software was compromised by KurtLar_SCADA had this to say on their VNC security page...
 
 <div>
   <figure>
-  <img src="/assets/vnc-security-lol.png" class="sm:w-1/1 mx-auto">
+  <img src="/assets/vnc-security-lol.png" class="sm:w-1/1 mx-auto" alt="Vendor VNC security guidance screenshot">
   <center><figcaption>Vendor's VNC Security Page...Yikes</figcaption></center>
   </figure>
 </div>
 
-Folks - <i>please so demand.</i>
+Folks, <i>please do so.</i>

@@ -1,7 +1,8 @@
 {
-  "name": "astro-paper",
+  "name": "sam-hanson-space",
   "version": "4.2.0",
-  "private": false,
+  "private": true,
+  "description": "Sam Hanson's cybersecurity research website built with Astro.",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

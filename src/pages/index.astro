@@ -16,7 +16,7 @@ const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
-const socialCount = SOCIALS.filter(social => social.active).length;
+const socialCount = SOCIALS.length;
 ---
 
 <Layout>
@@ -24,33 +24,38 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   <main id="main-content">
     <section id="hero">
       <h1>The Internet Observatory</h1>
-      <body>
+      <div class="observatory-display">
         <pre
-          id="ascii-telescope">
-              68 74 74 70 73 3A 2F 2F 74 
-              69 6E 79 75 72 6C 2E 63 6F 
-              6D 2F 32 72 33 78 75 36 61 
-              62 00 00 00 00 00 00 00 00
-     ,-.
-    / \  `.  __..-,O
-   :   \ --''_..-'.'
-   |    . .-' `. '.
-   :     .     .`.'
-    \     `.  /  ..
-     \      `.   ' .
-      `,       `.   \
-     ,|,`.        `-.\
-    '.||  ``-...__..-`
-     |__|         
-     /||\
-    //||\\
+          id="ascii-telescope"
+          aria-hidden="true">
+                68 74 74 70 73 3A 2F 2F 74 
+                69 6E 79 75 72 6C 2E 63 6F 
+                6D 2F 32 72 33 78 75 36 61 
+                62 00 00 00 00 00 00 00 00
+       ,-.
+      / \  `.  __..-,O
+     :   \ --''_..-'.'
+     |    . .-' `. '.
+     :     .     .`.'
+      \     `.  /  ..
+       \      `.   ' .
+        `,       `.   \
+       ,|,`.        `-.\
+      '.||  ``-...__..-`
+       |__|         
+       /||\
+      //||\\
         </pre>
-      </body>
+      </div>
 
       <p>Hi! Welcome to my website.</p>
-      This space if for presenting my public research in <b>malware analysis</b
-      >, <b>vulnerability research</b>, and <b>cyber threat intelligence</b>,
-      specifically impacting industrial systems and critical infrastructure.
+      <p>
+        This space is for presenting my public research in <strong
+          >malware analysis</strong
+        >, <strong>vulnerability research</strong>, and <strong
+          >cyber threat intelligence</strong
+        >, with a focus on industrial systems and critical infrastructure.
+      </p>
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
@@ -126,6 +131,27 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   }
   #hero h1 {
     @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+  }
+  .observatory-display {
+    position: relative;
+    margin: 1.2rem 0 1rem;
+    padding: 1rem;
+    overflow: hidden;
+    border: 1px solid rgba(35, 87, 137, 0.26);
+    background: radial-gradient(
+        circle at top,
+        rgba(35, 87, 137, 0.3),
+        transparent 38%
+      ),
+      linear-gradient(180deg, #0a1220 0%, #04080f 100%);
+    box-shadow: 0 10px 26px rgba(4, 8, 15, 0.18);
+  }
+  #ascii-telescope {
+    margin: 0;
+    overflow-x: auto;
+    background: transparent;
+    color: #f7fbff;
+    text-shadow: 0 0 10px rgba(179, 223, 255, 0.08);
   }
   #hero .rss-link {
     @apply mb-6;

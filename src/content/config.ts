@@ -9,8 +9,8 @@ const blog = defineCollection({
       pubDatetime: z.date(),
       modDatetime: z.date().optional().nullable(),
       title: z.string(),
-      featured: z.boolean().optional(),
-      draft: z.boolean().optional(),
+      featured: z.boolean().default(false),
+      draft: z.boolean().default(false),
       tags: z.array(z.string()).default(["others"]),
       ogImage: image()
         .refine(img => img.width >= 1200 && img.height >= 630, {

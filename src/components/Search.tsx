@@ -1,5 +1,5 @@
 import Fuse from "fuse.js";
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import Card from "@components/Card";
 import type { CollectionEntry } from "astro:content";
 
@@ -22,9 +22,7 @@ interface SearchResult {
 export default function SearchBar({ searchList }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputVal, setInputVal] = useState("");
-  const [searchResults, setSearchResults] = useState<SearchResult[] | null>(
-    null
-  );
+  const deferredInputVal = useDeferredValue(inputVal);
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setInputVal(e.currentTarget.value);
@@ -41,6 +39,9 @@ export default function SearchBar({ searchList }: Props) {
     [searchList]
   );
 
+  const searchResults: SearchResult[] =
+    deferredInputVal.length > 1 ? fuse.search(deferredInputVal) : [];
+
   useEffect(() => {
     // if URL has search query,
     // insert that search query in input field
@@ -50,17 +51,13 @@ export default function SearchBar({ searchList }: Props) {
 
     // put focus cursor at the end of the string
     setTimeout(function () {
-      inputRef.current!.selectionStart = inputRef.current!.selectionEnd =
+      if (!inputRef.current) return;
+      inputRef.current.selectionStart = inputRef.current.selectionEnd =
         searchStr?.length || 0;
     }, 50);
   }, []);
 
   useEffect(() => {
-    // Add search result only if
-    // input value is more than one character
-    let inputResult = inputVal.length > 1 ? fuse.search(inputVal) : [];
-    setSearchResults(inputResult);
-
     // Update search string in URL
     if (inputVal.length > 0) {
       const searchParams = new URLSearchParams(window.location.search);
@@ -100,23 +97,19 @@ export default function SearchBar({ searchList }: Props) {
 
       {inputVal.length > 1 && (
         <div className="mt-8">
-          Found {searchResults?.length}
-          {searchResults?.length && searchResults?.length === 1
-            ? " result"
-            : " results"}{" "}
-          for '{inputVal}'
+          Found {searchResults.length}
+          {searchResults.length === 1 ? " result" : " results"} for '{inputVal}'
         </div>
       )}
 
       <ul>
-        {searchResults &&
-          searchResults.map(({ item, refIndex }) => (
-            <Card
-              href={`/posts/${item.slug}/`}
-              frontmatter={item.data}
-              key={`${refIndex}-${item.slug}`}
-            />
-          ))}
+        {searchResults.map(({ item, refIndex }) => (
+          <Card
+            href={`/posts/${item.slug}/`}
+            frontmatter={item.data}
+            key={`${refIndex}-${item.slug}`}
+          />
+        ))}
       </ul>
     </>
   );

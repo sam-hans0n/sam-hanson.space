@@ -62,11 +62,11 @@ I've presented at several in person conferences, including:
   - DISC'22: Malware, 0 Days, and PLCs, Oh Boy!
 - [BSides Zurich: PLC Password Cracking Malware](/bszh22-Sam_Hanson-Malware-Zero-Days-and-PLCs-Oh-Boy.pdf)
 
-Unfortunately, some of these were private conferences with sensitive information, so I am unable to share the all slides.
+Unfortunately, some of these were private conferences with sensitive information, so I am unable to share all of the slides.
 
 <br>
 
-I also am one of the organizers of [BSides Twin Cities](https://bsidestc.org), an annual conference held in Minneapolis, MN in early October. Please check out the site for more information, it's a great con!
+I'm also one of the organizers of [BSides Twin Cities](https://bsidestc.org), an annual conference held in Minneapolis, MN in early October. Please check out the site for more information. It's a great con!
 
 ---
 

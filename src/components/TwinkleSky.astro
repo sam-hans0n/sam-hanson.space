@@ -1,0 +1,174 @@
+---
+export interface Props {
+  starCount?: number;
+}
+
+const { starCount = 72 } = Astro.props;
+---
+
+<div
+  class="twinkle-sky"
+  aria-hidden="true"
+  data-page-twinkle-sky
+  data-star-count={starCount}
+>
+</div>
+
+<style is:global>
+  .twinkle-sky {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+    user-select: none;
+  }
+
+  .twinkle-sky .twinkle-sky__star {
+    position: absolute;
+    display: block;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    left: var(--twinkle-left, 50%);
+    top: var(--twinkle-top, 50%);
+    font-size: var(--twinkle-size, 0.62rem);
+    line-height: 1;
+    color: var(--twinkle-color, rgba(255, 255, 255, 0.6));
+    opacity: 0;
+    animation: twinkle var(--twinkle-duration, 4.2s) ease-in-out infinite;
+    animation-delay: var(--twinkle-delay, 0s);
+    text-shadow: 0 0 8px currentColor;
+    will-change: opacity, transform;
+  }
+
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0;
+      transform: translate3d(0, 0, 0) scale(0.9);
+    }
+
+    30% {
+      opacity: calc(var(--twinkle-opacity, 0.42) * 0.45);
+    }
+
+    52% {
+      opacity: var(--twinkle-opacity, 0.42);
+      transform: translate3d(0, -1px, 0) scale(1);
+    }
+
+    72% {
+      opacity: calc(var(--twinkle-opacity, 0.42) * 0.2);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .twinkle-sky .twinkle-sky__star {
+      animation: none;
+      opacity: 0.29;
+      transform: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  function chooseCharacter() {
+    const roll = Math.random();
+
+    if (roll < 0.54) return ".";
+    if (roll < 0.95) return "*";
+    return "+";
+  }
+
+  function chooseColorProfile() {
+    const roll = Math.random();
+
+    if (roll < 0.4) {
+      return {
+        color: "rgba(255, 255, 255, 0.64)",
+        opacity: "0.46",
+      };
+    }
+
+    if (roll < 0.65) {
+      return {
+        color: "rgba(140, 214, 255, 0.82)",
+        opacity: "0.58",
+      };
+    }
+
+    if (roll < 0.9) {
+      return {
+        color: "rgba(255, 154, 172, 0.8)",
+        opacity: "0.58",
+      };
+    }
+
+    return {
+      color: "rgba(255, 223, 118, 0.92)",
+      opacity: "0.74",
+    };
+  }
+
+  function randomBetween(min, max) {
+    return min + Math.random() * (max - min);
+  }
+
+  function decorateStar(star) {
+    const char = chooseCharacter();
+    const colorProfile = chooseColorProfile();
+    const duration = randomBetween(5.5, 11.5);
+
+    star.textContent = char;
+    star.style.setProperty("--twinkle-left", `${Math.random() * 100}%`);
+    star.style.setProperty("--twinkle-top", `${Math.random() * 100}%`);
+    star.style.setProperty(
+      "--twinkle-size",
+      `${randomBetween(0.46, 0.82).toFixed(2)}rem`
+    );
+    star.style.setProperty("--twinkle-duration", `${duration.toFixed(2)}s`);
+    star.style.setProperty("--twinkle-delay", `${-Math.random() * duration}s`);
+    star.style.setProperty("--twinkle-color", colorProfile.color);
+    star.style.setProperty("--twinkle-opacity", colorProfile.opacity);
+  }
+
+  function renderTwinkleSky(field) {
+    const baseCount = Number(field.dataset.starCount || "72");
+    const widthScale = Math.min(Math.max(window.innerWidth / 1280, 0.68), 1.2);
+    const total = Math.max(28, Math.round(baseCount * widthScale));
+
+    field.replaceChildren();
+
+    for (let index = 0; index < total; index += 1) {
+      const star = document.createElement("span");
+      star.className = "twinkle-sky__star";
+      decorateStar(star);
+      field.appendChild(star);
+    }
+  }
+
+  function initTwinkleSkies() {
+    document.querySelectorAll("[data-page-twinkle-sky]").forEach(field => {
+      if (field.dataset.twinkleReady === "true") return;
+      renderTwinkleSky(field);
+      field.dataset.twinkleReady = "true";
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initTwinkleSkies, {
+      once: true,
+    });
+  } else {
+    initTwinkleSkies();
+  }
+
+  document.addEventListener("astro:page-load", initTwinkleSkies);
+
+  window.addEventListener("resize", () => {
+    document.querySelectorAll("[data-page-twinkle-sky]").forEach(field => {
+      field.dataset.twinkleReady = "false";
+      renderTwinkleSky(field);
+      field.dataset.twinkleReady = "true";
+    });
+  });
+</script>

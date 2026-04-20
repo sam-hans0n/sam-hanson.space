@@ -32,13 +32,12 @@ description: Jimmy Wylie's and my DEF CON'33 talk is now available on YouTube. W
 }
 </style>
 
-In August, Jimmy Wylie and I presented at DEF CON'33 on Dragos' process for determining whether a given capability qualifies as "ICS-specific malware."
+In August, Jimmy Wylie and I presented at DEF CON 33 on Dragos' process for determining whether a given capability qualifies as "ICS-specific malware."
 
 <center class="video-container">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/6U_CepoMSl4?si=FRzmDYQyY7Xs-iZu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
 </center>
 
-We presented a basic rubric for making the determination and include 3 example capabilities that I discovered while threat hunting and why - though they might look like it - they do not qualify as ICS malware.
+We presented a basic rubric for making the determination and included three example capabilities that I discovered while threat hunting and why, even though they might look like it at first glance, they do not qualify as ICS malware.
 
 Give it a listen!

@@ -62,8 +62,6 @@ Unfortunately, my hosting provider does not automatically collect visitor inform
 |  92.45.71.146  |     2070      |
 | 85.163.10.163  |     2045      |
 
-While the full list of 700 IPs would've been better, I gotta hand it to Netlify's customer support. They were significantly more helpful than I had expected.
+While the full list of 700 IPs would've been better, I have to hand it to Netlify's customer support. They were significantly more helpful than I had expected.
 
-Unfortunately, I have not been able to tie this activity to any specific botnet. I would've considered the possibility of a poorly programmed, gone awry scanner as a explanation, but the DDoS user agent string certainly seems to indicate otherwise. Researchers or analysts who come across similar activity or overlaps with the above indicators - please reach out over LinkedIn.
-
-<img href=""></img>
+Unfortunately, I have not been able to tie this activity to any specific botnet. I would've considered the possibility of a poorly programmed scanner gone awry as an explanation, but the DDoS user-agent string certainly seems to indicate otherwise. Researchers or analysts who come across similar activity or overlaps with the above indicators, please reach out over LinkedIn.

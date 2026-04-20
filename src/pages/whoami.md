@@ -25,11 +25,11 @@ I love any technical aspect of cybersecurity, malware analysis and vulnerability
 
 ## Work History
 
-Please see my ["Public Research"](/posts/public-research/) page for complete list.
+Please see my ["Public Research"](/posts/public-research/) page for the complete list.
 
 <br></br>
 
 ### About This Site
 
-This site was built with Astro JS using the [AstroPaper theme](https://github.com/satnaing/astro-paper).
-Then modified further to suit needs. It's actually great, and can be completed extremely quickly.
+This site was built with Astro and started from the [AstroPaper theme](https://github.com/satnaing/astro-paper).
+From there, I customized it to better fit the research, writing style, and overall tone I wanted for this project.
