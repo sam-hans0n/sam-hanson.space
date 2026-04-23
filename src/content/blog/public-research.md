@@ -1,7 +1,7 @@
 ---
 author: Sam Hanson
 pubDatetime: 2024-07-17T11:43:26.066Z
-modDatetime: 2025-04-08T11:43:26.066Z
+modDatetime: 2026-04-22T01:43:26.066Z
 title: Public Research
 slug: public-research
 featured: true
@@ -23,6 +23,7 @@ description: Please see this page for complete listing of public research in the
 
 ## Threat Hunting
 
+- [ICS-Adjacent Capabilities Research and Trends section, Dragos Year-in-Review 2025](https://5943619.hs-sites.com/hubfs/312-Year-in-Review/2026/Dragos-2026-OT-Cybersecurity-Report-A-Year-in-Review.pdf?hsCtaAttrib=205683189348)
 - [Hunting Beyond Indicators](https://substack.com/home/post/p-175671802): Guest Blog for the THOR Collective.
 
 ## Malware Analysis
