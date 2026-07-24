@@ -1,6 +1,6 @@
 ---
 author: Sam Hanson
-pubDatetime: 2026-07-24T21:45:00.000Z
+pubDatetime: 2025-11-06T15:00:00.000Z
 title: Hunting Beyond Indicators - Part 2
 slug: hunting-beyond-indicators-part-2
 featured: false
