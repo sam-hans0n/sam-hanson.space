@@ -1,6 +1,7 @@
 ---
 author: Sam Hanson
 pubDatetime: 2024-07-15T15:15:40.021Z
+modDatetime: 2026-09-20T23:00:00.000Z
 title: CVEs Discovered
 slug: cves-discovered
 featured: true
@@ -12,6 +13,10 @@ description: Please see this page for exhaustive list of discovered and disclose
 ---
 
 List of discovered vulnerabilities:
+
+<p id="cve-table-help" class="table-help">Browse the disclosures below. On smaller screens, scroll the table sideways to see every column.</p>
+
+<div class="cve-table-scroll" role="region" aria-label="Discovered vulnerabilities" aria-describedby="cve-table-help" tabindex="0">
 
 | CVE                                                                                                                                                                | Product                                                     | CWE (vuln type)                                                                            | CVSSv3 Score |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------ |
@@ -39,5 +44,7 @@ List of discovered vulnerabilities:
 | [CVE-2021-42797](https://www.cisa.gov/news-events/ics-advisories/icsa-22-326-01)                                                                                   | AVEVA Edge HMI/SCADA Software                               | Path Traversal (Windows UNC injection)                                                     | 8.6          |
 | [CVE-2022-34755](https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2023-101-06&p_enDocType=Security+and+Safety+Notice&p_File_Name=SEVD-2023-101-06.pdf) | Schneider Electric's Easergy Builder                        | Uncontrolled Search Path Element                                                           | 6.3          |
 | [CVE-2021-22775](https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-222-03)                                                                         | Schneider Electric's GP-Pro Ex                              | Uncontrolled Search Path Element                                                           | 7.8          |
-| [CVE-2021-31218]()                                                                                                                                                 | VIPA's WinPLC7 PLC Programming Software                     | Stack-based Buffer Overflow                                                                | 7.8          |
-| [CVE-2021-31219]()                                                                                                                                                 | VIPA's WinPLC7 PLC Programming Software                     | Uncontrolled Search Path Element                                                           | 7.8          |
+| [CVE-2021-31218](https://nvd.nist.gov/vuln/detail/CVE-2021-31218)                                                                                                  | VIPA's WinPLC7 PLC Programming Software                     | Stack-based Buffer Overflow                                                                | 7.8          |
+| [CVE-2021-31219](https://nvd.nist.gov/vuln/detail/CVE-2021-31219)                                                                                                  | VIPA's WinPLC7 PLC Programming Software                     | Uncontrolled Search Path Element                                                           | 7.8          |
+
+</div>

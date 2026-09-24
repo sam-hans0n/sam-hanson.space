@@ -24,10 +24,11 @@ const socialCount = SOCIALS.length;
   <main id="main-content">
     <section id="hero">
       <h1>The Internet Observatory</h1>
-      <div class="observatory-display">
-        <pre
-          id="ascii-telescope"
-          aria-hidden="true">
+      <div class="hero-content">
+        <div class="observatory-display">
+          <pre
+            id="ascii-telescope"
+            aria-hidden="true">
                 68 74 74 70 73 3A 2F 2F 74 
                 69 6E 79 75 72 6C 2E 63 6F 
                 6D 2F 32 72 33 78 75 36 61 
@@ -46,25 +47,28 @@ const socialCount = SOCIALS.length;
        /||\
       //||\\
         </pre>
-      </div>
+        </div>
 
-      <p>Hi! Welcome to my website.</p>
-      <p>
-        This space is for presenting my public research in <strong
-          >malware analysis</strong
-        >, <strong>vulnerability research</strong>, and <strong
-          >cyber threat intelligence</strong
-        >, with a focus on industrial systems and critical infrastructure.
-      </p>
-      {
-        // only display if at least one social link is enabled
-        socialCount > 0 && (
-          <div class="social-wrapper">
-            <div class="social-links">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
+        <div class="hero-introduction">
+          <p>Hi! Welcome to my website.</p>
+          <p>
+            This space is for presenting my public research in <strong
+              >malware analysis</strong
+            >, <strong>vulnerability research</strong>, and <strong
+              >cyber threat intelligence</strong
+            >, with a focus on industrial systems and critical infrastructure.
+          </p>
+          {
+            // only display if at least one social link is enabled
+            socialCount > 0 && (
+              <div class="social-wrapper">
+                <div class="social-links">Social Links:</div>
+                <Socials />
+              </div>
+            )
+          }
+        </div>
+      </div>
     </section>
 
     <Hr />
@@ -130,14 +134,41 @@ const socialCount = SOCIALS.length;
     @apply pb-6 pt-8;
   }
   #hero h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
+    @apply mb-6 text-3xl font-bold sm:text-4xl;
+    text-wrap: balance;
+  }
+  .hero-content {
+    display: grid;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .hero-introduction {
+    min-width: 0;
+    grid-row: 1;
   }
   .observatory-display {
-    margin: 1.2rem 0 1rem;
+    justify-self: center;
+    min-width: 0;
+    max-width: 100%;
+  }
+  @media (min-width: 640px) {
+    .hero-content {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+      gap: 2rem;
+    }
+    .hero-introduction {
+      grid-column: 1;
+    }
+    .observatory-display {
+      grid-column: 2;
+      grid-row: 1;
+    }
   }
   #ascii-telescope {
     margin: 0;
-    overflow-x: auto;
+    font-size: clamp(0.5rem, 1.7vw, 0.68rem);
+    line-height: 1.15;
+    overflow: visible;
     background: transparent;
     color: rgb(var(--color-text-base));
     text-shadow: 0 0 10px rgba(179, 223, 255, 0.08);
@@ -152,7 +183,7 @@ const socialCount = SOCIALS.length;
     @apply my-2;
   }
   .social-wrapper {
-    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
+    @apply mt-4 flex flex-wrap items-center gap-2;
   }
   .social-links {
     @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
@@ -161,7 +192,7 @@ const socialCount = SOCIALS.length;
   /* ===== Featured & Recent Posts Sections ===== */
   #featured,
   #recent-posts {
-    @apply pb-6 pt-12;
+    @apply pb-6 pt-8;
   }
   #featured h2,
   #recent-posts h2 {

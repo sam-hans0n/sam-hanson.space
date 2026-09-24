@@ -2,7 +2,7 @@
 import { LOCALE, SITE } from "@config";
 import "@styles/base.css";
 import TwinkleSky from "@components/TwinkleSky.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -47,6 +47,7 @@ const socialImageURL = new URL(
       type="image/x-icon"
       href="https://sam-hanson.space/spiral.ico"
     />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
@@ -110,7 +111,7 @@ const socialImageURL = new URL(
       )
     }
 
-    <ViewTransitions />
+    <ClientRouter />
 
     <script is:inline src="/toggle-theme.js"></script>
   </head>

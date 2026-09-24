@@ -1,0 +1,160 @@
+---
+const projects = [
+  {
+    category: "Malware analysis",
+    title: "Fuxnet",
+    description:
+      "Analysis of the reported Linux-wiping and Meter-bus capabilities targeting industrial sensor gateways. Co-written with Bryce Livingston.",
+    links: [
+      { label: "Read the analysis", href: "/posts/fuxnet-malware/" },
+      {
+        label: "Whitepaper ↗",
+        href: "https://hub.dragos.com/hubfs/Reports/WP_FUXNET_Final_2_CH.pdf",
+      },
+    ],
+  },
+  {
+    category: "Threat hunting",
+    title: "Hunting Beyond Indicators",
+    description:
+      "A two-part series on behavior-based hunting, from developing hypotheses to investigating KurtLar_SCADA and a .NET Modbus binary.",
+    links: [
+      { label: "Read Part 1", href: "/posts/hunting-beyond-indicators/" },
+      {
+        label: "Read Part 2",
+        href: "/posts/hunting-beyond-indicators-part-2/",
+      },
+    ],
+  },
+  {
+    category: "Talk · DEF CON 33",
+    title: "Don't Cry Wolf",
+    description:
+      "A talk with Jimmy Wylie on the evidence needed to assess ICS threats and distinguish suspicious capabilities from ICS-specific malware.",
+    links: [
+      {
+        label: "Watch the talk",
+        href: "/posts/defcon-evidence-based-assessment/",
+      },
+    ],
+  },
+];
+---
+
+<section class="research-highlights" aria-labelledby="selected-research">
+  <div class="section-heading">
+    <h2 id="selected-research">Selected research</h2>
+    <a href="#threat-hunting">Full list ↓</a>
+  </div>
+  <div class="project-grid">
+    {
+      projects.map(project => (
+        <article class="project-card">
+          <p class="project-category">{project.category}</p>
+          <h3>{project.title}</h3>
+          <p>{project.description}</p>
+          <div class="project-links">
+            {project.links.map(link => (
+              <a href={link.href}>{link.label}</a>
+            ))}
+          </div>
+        </article>
+      ))
+    }
+  </div>
+  <nav class="research-sections" aria-label="Research categories">
+    <a href="#threat-hunting">Threat hunting</a>
+    <a href="#malware-analysis">Malware analysis</a>
+    <a href="#vulnerability-research">Vulnerabilities</a>
+    <a href="#conferences">Conferences</a>
+    <a href="#webinars">Webinars</a>
+    <a href="#media-coverage">Media</a>
+  </nav>
+</section>
+
+<style>
+  .research-highlights {
+    padding: 0;
+    margin-top: 2rem;
+  }
+  .section-heading {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  .section-heading a {
+    font-size: 0.8rem;
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+  }
+  .project-grid {
+    display: grid;
+    gap: 1rem;
+  }
+  .project-card {
+    border: 1px solid rgb(var(--color-border));
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    min-width: 0;
+    background: rgb(var(--color-card) / 0.12);
+  }
+  .project-category {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.75;
+  }
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .project-card > p:not(.project-category) {
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+  .project-links {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    font-size: 0.8rem;
+  }
+  .project-links a {
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+  }
+  .research-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgb(var(--color-border));
+  }
+  .research-sections a {
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.3rem;
+    background: rgb(var(--color-card) / 0.3);
+    font-size: 0.75rem;
+  }
+  a:focus-visible {
+    outline-color: currentColor;
+  }
+  @media (min-width: 640px) {
+    .project-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>

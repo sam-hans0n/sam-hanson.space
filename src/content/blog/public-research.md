@@ -99,6 +99,6 @@ Some of my research has been covered in the media.
 
 ### Comments, Quotes, and Random Tidbits
 
-- [Ars Technica: Comment on Microsoft-disovered CoDeSys Vulnerabilities](https://arstechnica.com/security/2023/08/microsoft-finds-vulnerabilities-it-says-could-be-used-to-shut-down-power-plants/)
+- [Ars Technica: Comment on Microsoft-discovered CoDeSys Vulnerabilities](https://arstechnica.com/security/2023/08/microsoft-finds-vulnerabilities-it-says-could-be-used-to-shut-down-power-plants/)
 
 <br></br>

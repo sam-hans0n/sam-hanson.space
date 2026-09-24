@@ -1,5 +1,12 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "include": [
+    ".astro/types.d.ts",
+    "src/**/*",
+    "astro.config.ts",
+    "remark-collapse.d.ts"
+  ],
+  "exclude": ["dist", "node_modules"],
   "compilerOptions": {
     "baseUrl": "src",
     "jsx": "react-jsx",
@@ -11,7 +18,7 @@
       "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
-      "@utils/*": ["utils/*"],
-    },
-  },
+      "@utils/*": ["utils/*"]
+    }
+  }
 }

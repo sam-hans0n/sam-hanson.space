@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && jampack ./dist",
+    "build": "npm run check && astro build && jampack ./dist --exclude \"_astro/**/*.js\" --fail && node scripts/verify-build.mjs",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",
@@ -14,7 +14,8 @@
     "format": "prettier --write . --plugin=prettier-plugin-astro",
     "cz": "cz",
     "prepare": "husky install",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "check": "astro check"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",

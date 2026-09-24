@@ -6,6 +6,8 @@ import type { CollectionEntry } from "astro:content";
 export type SearchItem = {
   title: string;
   description: string;
+  body: string;
+  tags: string[];
   data: CollectionEntry<"blog">["data"];
   slug: string;
 };
@@ -22,7 +24,8 @@ interface SearchResult {
 export default function SearchBar({ searchList }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputVal, setInputVal] = useState("");
-  const deferredInputVal = useDeferredValue(inputVal);
+  const deferredInputVal = useDeferredValue(inputVal.trim());
+  const [initialized, setInitialized] = useState(false);
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setInputVal(e.currentTarget.value);
@@ -31,44 +34,58 @@ export default function SearchBar({ searchList }: Props) {
   const fuse = useMemo(
     () =>
       new Fuse(searchList, {
-        keys: ["title", "description"],
+        keys: [
+          { name: "title", weight: 4 },
+          { name: "tags", weight: 3 },
+          { name: "description", weight: 2 },
+          { name: "body", weight: 1 },
+        ],
+        ignoreLocation: true,
+        ignoreFieldNorm: true,
         includeMatches: true,
         minMatchCharLength: 2,
-        threshold: 0.5,
+        threshold: 0.3,
       }),
     [searchList]
   );
 
-  const searchResults: SearchResult[] =
-    deferredInputVal.length > 1 ? fuse.search(deferredInputVal) : [];
+  const searchResults: SearchResult[] = useMemo(() => {
+    if (deferredInputVal.length < 2) return [];
+    // Identifiers must match exactly: a nearby CVE number is a different finding.
+    if (/^CVE-\d{4}-\d{4,}$/i.test(deferredInputVal)) {
+      const identifier = deferredInputVal.toLowerCase();
+      return searchList.flatMap((item, refIndex) => {
+        const identifiers: string[] =
+          `${item.title} ${item.description} ${item.body}`
+            .toLowerCase()
+            .match(/\bcve-\d{4}-\d{4,}\b/g) ?? [];
+        return identifiers.includes(identifier) ? [{ item, refIndex }] : [];
+      });
+    }
+    return fuse.search(deferredInputVal);
+  }, [deferredInputVal, fuse, searchList]);
 
   useEffect(() => {
-    // if URL has search query,
-    // insert that search query in input field
-    const searchUrl = new URLSearchParams(window.location.search);
-    const searchStr = searchUrl.get("q");
-    if (searchStr) setInputVal(searchStr);
-
-    // put focus cursor at the end of the string
-    setTimeout(function () {
-      if (!inputRef.current) return;
-      inputRef.current.selectionStart = inputRef.current.selectionEnd =
-        searchStr?.length || 0;
-    }, 50);
+    const readQuery = () => {
+      setInputVal(new URLSearchParams(window.location.search).get("q") ?? "");
+      setInitialized(true);
+    };
+    readQuery();
+    window.addEventListener("popstate", readQuery);
+    return () => window.removeEventListener("popstate", readQuery);
   }, []);
 
   useEffect(() => {
-    // Update search string in URL
-    if (inputVal.length > 0) {
-      const searchParams = new URLSearchParams(window.location.search);
-      searchParams.set("q", inputVal);
-      const newRelativePathQuery =
-        window.location.pathname + "?" + searchParams.toString();
-      history.replaceState(history.state, "", newRelativePathQuery);
-    } else {
-      history.replaceState(history.state, "", window.location.pathname);
-    }
-  }, [inputVal]);
+    if (!initialized) return;
+    const url = new URL(window.location.href);
+    if (inputVal.trim()) url.searchParams.set("q", inputVal);
+    else url.searchParams.delete("q");
+    history.replaceState(
+      history.state,
+      "",
+      url.pathname + url.search + url.hash
+    );
+  }, [inputVal, initialized]);
 
   return (
     <>
@@ -90,17 +107,19 @@ export default function SearchBar({ searchList }: Props) {
           value={inputVal}
           onChange={handleChange}
           autoComplete="off"
-          // autoFocus
+          aria-describedby="search-status"
           ref={inputRef}
         />
       </label>
 
-      {inputVal.length > 1 && (
-        <div className="mt-8">
-          Found {searchResults.length}
-          {searchResults.length === 1 ? " result" : " results"} for '{inputVal}'
-        </div>
-      )}
+      <div id="search-status" role="status" aria-live="polite" className="mt-6">
+        {deferredInputVal.length > 1
+          ? `Found ${searchResults.length} ${searchResults.length === 1 ? "result" : "results"} for “${deferredInputVal}”`
+          : "Search titles, topics, article text, or a CVE ID (at least 2 characters)."}
+        {deferredInputVal.length > 1 && searchResults.length === 0 && (
+          <p className="mt-2">Try a malware name, vendor, or broader topic.</p>
+        )}
+      </div>
 
       <ul>
         {searchResults.map(({ item, refIndex }) => (
