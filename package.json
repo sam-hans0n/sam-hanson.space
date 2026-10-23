@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm run check && astro build && jampack ./dist --exclude \"_astro/**/*.js\" --fail && node scripts/verify-build.mjs",
+    "build": "npm run check && astro build && jampack ./dist --exclude \"{_astro/**/*.js,astrophotography/**/*.webp}\" --fail && node scripts/verify-build.mjs",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",

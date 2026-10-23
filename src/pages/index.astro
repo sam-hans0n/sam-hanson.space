@@ -9,6 +9,7 @@ import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SOCIALS } from "@config";
+import { astroPhotos } from "../data/astrophotography";
 
 const posts = await getCollection("blog");
 
@@ -69,6 +70,33 @@ const socialCount = SOCIALS.length;
           }
         </div>
       </div>
+    </section>
+
+    <Hr />
+
+    <section id="night-sky">
+      <div>
+        <h2>Astro Gallery</h2>
+        <p>Explore my astrophotography and the details behind each capture.</p>
+        <a href="/astrophotography/"
+          >Explore the gallery <span aria-hidden="true">→</span></a
+        >
+      </div>
+      {
+        astroPhotos.length > 0 && (
+          <a
+            class="sky-preview"
+            href="/astrophotography/"
+            aria-label="View astrophotography gallery"
+          >
+            <img
+              src={astroPhotos[0].src}
+              alt={astroPhotos[0].alt}
+              loading="lazy"
+            />
+          </a>
+        )
+      }
     </section>
 
     <Hr />
@@ -200,5 +228,27 @@ const socialCount = SOCIALS.length;
   }
   .all-posts-btn-wrapper {
     @apply my-8 text-center;
+  }
+  #night-sky {
+    @apply grid gap-6 py-8 sm:grid-cols-2 sm:items-center;
+  }
+  #night-sky h2 {
+    @apply mb-3 text-2xl font-semibold;
+  }
+  #night-sky p:not(.section-kicker) {
+    @apply mb-4 text-sm leading-relaxed;
+  }
+  #night-sky a:not(.sky-preview) {
+    @apply font-semibold text-skin-accent underline underline-offset-4;
+  }
+  .sky-preview {
+    @apply block overflow-hidden border border-skin-line;
+  }
+  .sky-preview img {
+    aspect-ratio: 4 / 3;
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 </style>

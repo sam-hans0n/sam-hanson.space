@@ -1,0 +1,348 @@
+---
+import { SITE } from "@config";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Layout from "@layouts/Layout.astro";
+import { astroPhotos } from "../../data/astrophotography";
+---
+
+<Layout
+  title={`Astrophotography | ${SITE.title}`}
+  description="Astrophotography by Sam Hanson: night sky images and the stories behind them."
+>
+  <Header activeNav="astrophotography" />
+  <main id="main-content" class="gallery-page">
+    <div class="gallery-intro">
+      <p class="eyebrow">FIELD NOTES / NIGHT SKY</p>
+      <h1>Astrophotography</h1>
+      <p>Select an image to see it larger and read about the capture.</p>
+      <div class="intro-rule" aria-hidden="true"><span>✦</span></div>
+    </div>
+
+    {
+      astroPhotos.length > 0 ? (
+        <section class="photo-grid" aria-label="Astrophotography gallery">
+          {astroPhotos.map((photo, index) => (
+            <button
+              class="photo-card"
+              type="button"
+              data-photo-index={index}
+              aria-label={`View ${photo.title}`}
+            >
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                loading={index < 2 ? "eager" : "lazy"}
+              />
+              <span class="photo-caption">
+                <strong>{photo.title}</strong>
+                <span>{photo.target ?? photo.captured ?? "Night sky"}</span>
+              </span>
+            </button>
+          ))}
+        </section>
+      ) : (
+        <section class="empty-gallery" aria-label="Gallery coming soon">
+          <span aria-hidden="true">✦ · ✦ · ✦</span>
+          <h2>First light is coming soon.</h2>
+          <p>
+            I'm preparing a few images for this gallery. Check back for a closer
+            look at the night sky.
+          </p>
+        </section>
+      )
+    }
+
+    {
+      astroPhotos.length > 0 && (
+        <dialog class="photo-dialog" aria-label="Astrophotography image viewer">
+          <div class="dialog-topbar">
+            <span class="dialog-count" />
+            <button
+              type="button"
+              class="dialog-close"
+              aria-label="Close image viewer"
+            >
+              Close ×
+            </button>
+          </div>
+          <div class="dialog-body">
+            <div class="dialog-media" />
+            <div class="dialog-details">
+              <p class="eyebrow">NIGHT SKY / FIELD NOTE</p>
+              <h2 class="dialog-title" />
+              <p class="dialog-story" />
+              <a
+                class="dialog-source"
+                target="_blank"
+                rel="noopener noreferrer"
+                hidden
+              >
+                Object facts: ESO ↗
+              </a>
+              <dl class="dialog-metadata" />
+              <div class="dialog-controls">
+                <button
+                  type="button"
+                  class="dialog-previous"
+                  aria-label="Previous photograph"
+                >
+                  ← Previous
+                </button>
+                <button
+                  type="button"
+                  class="dialog-next"
+                  aria-label="Next photograph"
+                >
+                  Next →
+                </button>
+              </div>
+            </div>
+          </div>
+        </dialog>
+      )
+    }
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .gallery-page {
+    @apply mx-auto w-full max-w-5xl px-4 pb-16;
+  }
+  .gallery-intro {
+    @apply mx-auto max-w-3xl pb-8 pt-8;
+  }
+  .eyebrow {
+    color: rgb(var(--color-accent));
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+  }
+  .gallery-intro h1 {
+    @apply mb-4 mt-3 text-3xl font-bold sm:text-4xl;
+  }
+  .gallery-intro > p:not(.eyebrow) {
+    @apply max-w-2xl leading-relaxed;
+  }
+  .intro-rule {
+    @apply mt-8 flex items-center gap-4;
+    color: rgb(var(--color-accent));
+  }
+  .intro-rule::before,
+  .intro-rule::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: rgb(var(--color-border) / 0.5);
+  }
+  .photo-grid {
+    display: grid;
+    width: 100%;
+    max-width: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    padding: 0;
+  }
+  .photo-card {
+    @apply overflow-hidden border border-skin-line text-left transition-colors hover:border-skin-accent focus-visible:outline-dashed;
+    background: rgb(var(--color-card) / 0.12);
+  }
+  .photo-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+  }
+  .photo-card:hover img {
+    transform: scale(1.025);
+  }
+  .photo-caption {
+    @apply flex flex-col gap-1 p-4;
+  }
+  .photo-caption strong {
+    @apply text-base;
+  }
+  .photo-caption span {
+    @apply text-xs opacity-70;
+  }
+  .empty-gallery {
+    @apply mx-auto max-w-3xl border border-dashed border-skin-line px-6 py-16 text-center;
+  }
+  .empty-gallery > span {
+    color: rgb(var(--color-accent));
+  }
+  .empty-gallery h2 {
+    @apply mb-3 mt-5 text-xl font-semibold;
+  }
+  .empty-gallery p {
+    @apply mx-auto max-w-lg text-sm leading-relaxed;
+  }
+  .photo-dialog {
+    width: min(94vw, 1100px);
+    max-height: 94vh;
+    padding: 0;
+    border: 1px solid rgb(var(--color-border));
+    color: rgb(var(--color-text-base));
+    background: rgb(var(--color-fill));
+  }
+  .photo-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.86);
+  }
+  .dialog-topbar {
+    @apply flex items-center justify-between border-b border-skin-line px-4 py-3 text-xs;
+  }
+  .dialog-close,
+  .dialog-controls button {
+    @apply px-2 py-1 hover:text-skin-accent focus-visible:outline-dashed;
+  }
+  .dialog-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(240px, 1fr);
+    max-height: calc(94vh - 49px);
+    overflow: auto;
+  }
+  .dialog-media {
+    background: #05070c;
+  }
+  .dialog-media :global(img) {
+    width: 100%;
+    height: 100%;
+    max-height: calc(94vh - 49px);
+    object-fit: contain;
+  }
+  .dialog-details {
+    @apply flex flex-col p-6;
+  }
+  .dialog-title {
+    @apply mb-4 mt-2 text-2xl font-semibold;
+  }
+  .dialog-story {
+    @apply mb-6 leading-relaxed;
+  }
+  .dialog-source {
+    @apply mb-5 text-xs underline underline-offset-4 hover:text-skin-accent;
+  }
+  .dialog-metadata {
+    @apply grid gap-3 border-t border-skin-line py-5 text-sm;
+  }
+  .dialog-metadata div {
+    @apply grid gap-1;
+  }
+  .dialog-metadata dt {
+    @apply text-xs font-bold uppercase tracking-wider;
+    text-decoration: underline;
+    text-decoration-color: rgb(var(--color-accent));
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+  .dialog-metadata dd {
+    @apply m-0 leading-relaxed;
+  }
+  .dialog-controls {
+    @apply mt-auto flex justify-between gap-3 border-t border-skin-line pt-4;
+  }
+  @media (max-width: 640px) {
+    .photo-grid {
+      grid-template-columns: 1fr;
+    }
+    .dialog-body {
+      display: block;
+    }
+    .dialog-media :global(img) {
+      height: auto;
+      max-height: 50vh;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .photo-card img {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  import { astroPhotos } from "../../data/astrophotography";
+
+  function setupGallery() {
+    const dialog = document.querySelector<HTMLDialogElement>(".photo-dialog");
+    if (!dialog) return;
+    if (dialog.dataset.galleryReady === "true") return;
+    dialog.dataset.galleryReady = "true";
+    const media = dialog.querySelector<HTMLElement>(".dialog-media")!;
+    const image = document.createElement("img");
+    image.className = "dialog-image";
+    media.append(image);
+    const title = dialog.querySelector<HTMLElement>(".dialog-title")!;
+    const story = dialog.querySelector<HTMLElement>(".dialog-story")!;
+    const source = dialog.querySelector<HTMLAnchorElement>(".dialog-source")!;
+    const metadata = dialog.querySelector<HTMLElement>(".dialog-metadata")!;
+    const count = dialog.querySelector<HTMLElement>(".dialog-count")!;
+    let current = 0;
+    let trigger: HTMLElement | null = null;
+
+    function show(index: number) {
+      current = (index + astroPhotos.length) % astroPhotos.length;
+      const photo = astroPhotos[current];
+      image.src = photo.fullSrc ?? photo.src;
+      image.alt = photo.alt;
+      title.textContent = photo.title;
+      story.textContent = photo.story ?? "";
+      story.hidden = !photo.story;
+      source.hidden = !photo.factSource;
+      if (photo.factSource) source.href = photo.factSource;
+      count.textContent = `${current + 1} / ${astroPhotos.length}`;
+      metadata.replaceChildren();
+      const fields: [string, string | undefined][] = [
+        ["Target", photo.target],
+        ["Date taken", photo.captured],
+        ["Taken at", photo.location],
+        ["ISO", photo.iso],
+        ["Exposure", photo.exposure],
+        ["Frames", photo.frames],
+        ["Equipment", photo.equipment],
+      ];
+      for (const [label, value] of fields) {
+        if (!value) continue;
+        const row = document.createElement("div");
+        const term = document.createElement("dt");
+        const description = document.createElement("dd");
+        term.textContent = label;
+        description.textContent = value;
+        row.append(term, description);
+        metadata.append(row);
+      }
+    }
+
+    document
+      .querySelectorAll<HTMLElement>("[data-photo-index]")
+      .forEach(card => {
+        card.addEventListener("click", () => {
+          trigger = card;
+          show(Number(card.dataset.photoIndex));
+          dialog.showModal();
+        });
+      });
+    dialog
+      .querySelector(".dialog-close")
+      ?.addEventListener("click", () => dialog.close());
+    dialog
+      .querySelector(".dialog-previous")
+      ?.addEventListener("click", () => show(current - 1));
+    dialog
+      .querySelector(".dialog-next")
+      ?.addEventListener("click", () => show(current + 1));
+    dialog.addEventListener("click", event => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener("close", () => trigger?.focus());
+    dialog.addEventListener("keydown", event => {
+      if (event.key === "ArrowLeft") show(current - 1);
+      if (event.key === "ArrowRight") show(current + 1);
+    });
+  }
+
+  document.addEventListener("astro:page-load", setupGallery);
+  setupGallery();
+</script>
