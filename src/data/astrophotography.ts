@@ -11,7 +11,7 @@ export interface AstroPhoto {
   exposure?: string;
   frames?: string;
   equipment?: string;
-  story?: string;
+  story?: string[];
   factSource?: string;
 }
 
@@ -29,8 +29,10 @@ export const astroPhotos: AstroPhoto[] = [
     frames: "47 images",
     equipment:
       "Sky-Watcher Star Adventurer GTi tracker • Askar FMA180 Pro astrograph • Canon EOS Rebel T6 DSLR",
-    story:
-      "NGC 7000's red glow comes from hydrogen-rich clouds illuminated by stars hidden within the nebula. This image combines 47 one-minute exposures to bring out its shape against the dense Cygnus star field.",
+    story: [
+      "The North America Nebula's red glow comes from hydrogen clouds lit by stars hidden within it.",
+      "I stacked 47 one-minute exposures to bring out its shape against the crowded Cygnus star field.",
+    ],
     factSource: "https://www.eso.org/public/images/b04/",
   },
   {
@@ -46,8 +48,10 @@ export const astroPhotos: AstroPhoto[] = [
     frames: "39 images",
     equipment:
       "Sky-Watcher Star Adventurer GTi tracker • Askar FMA180 Pro astrograph • Canon EOS Rebel T6 DSLR",
-    story:
-      "This was an accidental shot: M39 landed in the upper-left corner of a wide Cygnus star field. It is a loose open cluster about 800 light-years away, with roughly 30 recognized members. Some of its brightest stars are nearing their red-giant phase.",
+    story: [
+      "M39 landed in the upper-left corner of this wide Cygnus frame by accident.",
+      "It's a loose open cluster about 800 light-years away, with roughly 30 recognized stars. Some of its brightest stars are approaching their red-giant phase.",
+    ],
     factSource: "https://www.eso.org/public/images/b04/",
   },
 ];

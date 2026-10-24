@@ -71,7 +71,7 @@ import { astroPhotos } from "../../data/astrophotography";
             <div class="dialog-details">
               <p class="eyebrow">NIGHT SKY / FIELD NOTE</p>
               <h2 class="dialog-title" />
-              <p class="dialog-story" />
+              <div class="dialog-story" />
               <a
                 class="dialog-source"
                 target="_blank"
@@ -180,7 +180,7 @@ import { astroPhotos } from "../../data/astrophotography";
     @apply mx-auto max-w-lg text-sm leading-relaxed;
   }
   .photo-dialog {
-    width: min(94vw, 1100px);
+    width: min(96vw, 1200px);
     max-height: 94vh;
     padding: 0;
     border: 1px solid rgb(var(--color-border));
@@ -199,7 +199,7 @@ import { astroPhotos } from "../../data/astrophotography";
   }
   .dialog-body {
     display: grid;
-    grid-template-columns: minmax(0, 1.6fr) minmax(240px, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     max-height: calc(94vh - 49px);
     overflow: auto;
   }
@@ -213,31 +213,37 @@ import { astroPhotos } from "../../data/astrophotography";
     object-fit: contain;
   }
   .dialog-details {
-    @apply flex flex-col p-6;
+    @apply flex min-w-0 flex-col p-6;
   }
   .dialog-title {
-    @apply mb-4 mt-2 text-2xl font-semibold;
+    @apply mb-4 mt-2 text-xl font-semibold sm:text-2xl;
   }
   .dialog-story {
-    @apply mb-6 leading-relaxed;
+    @apply mb-5 max-w-prose leading-relaxed;
+  }
+  .dialog-story :global(p + p) {
+    margin-top: 0.75rem;
   }
   .dialog-source {
     @apply mb-5 text-xs underline underline-offset-4 hover:text-skin-accent;
   }
   .dialog-metadata {
-    @apply grid gap-3 border-t border-skin-line py-5 text-sm;
+    @apply grid grid-cols-2 gap-x-6 gap-y-4 border-t border-skin-line py-5 text-sm;
   }
-  .dialog-metadata div {
-    @apply grid gap-1;
+  .dialog-metadata :global(div) {
+    @apply grid min-w-0 content-start gap-1;
   }
-  .dialog-metadata dt {
+  .dialog-metadata :global(div:last-child) {
+    grid-column: 1 / -1;
+  }
+  .dialog-metadata :global(dt) {
     @apply text-xs font-bold uppercase tracking-wider;
     text-decoration: underline;
     text-decoration-color: rgb(var(--color-accent));
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
   }
-  .dialog-metadata dd {
+  .dialog-metadata :global(dd) {
     @apply m-0 leading-relaxed;
   }
   .dialog-controls {
@@ -249,6 +255,12 @@ import { astroPhotos } from "../../data/astrophotography";
     }
     .dialog-body {
       display: block;
+    }
+    .dialog-details {
+      padding: 1.25rem;
+    }
+    .dialog-metadata {
+      grid-template-columns: 1fr;
     }
     .dialog-media :global(img) {
       height: auto;
@@ -288,8 +300,13 @@ import { astroPhotos } from "../../data/astrophotography";
       image.src = photo.fullSrc ?? photo.src;
       image.alt = photo.alt;
       title.textContent = photo.title;
-      story.textContent = photo.story ?? "";
-      story.hidden = !photo.story;
+      story.replaceChildren();
+      for (const paragraph of photo.story ?? []) {
+        const text = document.createElement("p");
+        text.textContent = paragraph;
+        story.append(text);
+      }
+      story.hidden = !photo.story?.length;
       source.hidden = !photo.factSource;
       if (photo.factSource) source.href = photo.factSource;
       count.textContent = `${current + 1} / ${astroPhotos.length}`;
