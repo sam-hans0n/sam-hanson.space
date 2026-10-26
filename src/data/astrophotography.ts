@@ -6,7 +6,6 @@ export interface AstroPhoto {
   alt: string;
   target?: string;
   captured?: string;
-  location?: string;
   iso?: string;
   exposure?: string;
   frames?: string;
@@ -23,7 +22,6 @@ export const astroPhotos: AstroPhoto[] = [
     alt: "Red clouds of the North America Nebula surrounded by a dense field of stars",
     target: "Emission nebula in Cygnus",
     captured: "October 22, 2026",
-    location: "Metcalf Field observing site, Afton, MN",
     iso: "1600",
     exposure: "1 minute per image",
     frames: "47 images",
@@ -42,7 +40,6 @@ export const astroPhotos: AstroPhoto[] = [
     alt: "A broad Cygnus star field with the M39 star cluster in the upper left",
     target: "Cygnus star field and M39 open cluster",
     captured: "October 22, 2026",
-    location: "Metcalf Field observing site, Afton, MN",
     iso: "1600",
     exposure: "1 minute per image",
     frames: "39 images",
