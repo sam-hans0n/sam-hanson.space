@@ -23,6 +23,11 @@ I coauthored _What Frontier AI Models Can Actually Do in an xOT Environment_ wit
 
 One of the clearest results came from a mock power plant range. With very little initial context, a model distinguished OT assets from ordinary IT activity and found two previously unknown vulnerabilities in engineering software used to manage protective relay data. Those findings exposed protection settings and breaker trip logic. The model built a useful picture of an unfamiliar industrial environment and then found weaknesses in software tied to its operation. These models lowered the skill required to perform these steps and greatly increased the speed at which they can be done.
 
+<figure>
+  <img src="/assets/ot-daybreak.webp" width="1672" height="941" loading="lazy" decoding="async" alt="Illustration of an electrical substation and distant power plant at dawn, with faint network paths across the sky" />
+  <figcaption>Industrial systems at daybreak. Illustration created for this article.</figcaption>
+</figure>
+
 The assessments explored firmware analysis, a partial rebuild of a PIPEDREAM malware module, and activity reaching Stage 2 of the ICS Cyber Kill Chain. They also documented false positives and cases where model activity crashed devices. The results needed human validation and the guardrails of a lab.
 
 OpenAI's GPT-6 Cyber announcement discusses the Dragos collaboration in its section on defending critical infrastructure. OpenAI describes using our feedback to refine safeguards around dangerous requests while preserving access for authorized defenders.
