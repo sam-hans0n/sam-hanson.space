@@ -27,4 +27,8 @@ The assessments explored firmware analysis, a partial rebuild of a PIPEDREAM mal
 
 OpenAI's GPT-6 Cyber announcement discusses the Dragos collaboration in its section on defending critical infrastructure. OpenAI describes using our feedback to refine safeguards around dangerous requests while preserving access for authorized defenders.
 
-My takeaway is that frontier models are already useful for parts of OT reconnaissance and vulnerability research, but their output has to be checked against the actual system. Industrial environments are diverse, long lived, and connected to physical processes. Understanding what a model can discover, what it gets wrong, and how its actions affect equipment gives defenders a firmer basis for testing, prioritizing, and building safeguards.
+Frontier models are already useful for technical tasks such as reverse engineering and network reconnaissance. But many efforts still require iterative development and validation against real systems. This is not a simple “prompt and be done” process; expert review is still needed in many cases.
+
+We have not yet seen a fully agentic system carry out a Stage 2 attack that impacts OT.
+
+Yet.
