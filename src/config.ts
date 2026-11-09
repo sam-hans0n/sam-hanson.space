@@ -3,7 +3,7 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://sam-hanson.space", // replace this with your deployed domain
   author: "Sam Hanson",
-  desc: "A cybersecurity professional's research website.",
+  desc: "Sam Hanson's research on industrial systems and critical infrastructure, including malware analysis, vulnerability research, and cyber threat intelligence.",
   title: "Sam Hanson",
   ogImage: "/og.png",
   lightAndDarkMode: true,

@@ -7,6 +7,7 @@ import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
+import ResearchHighlights from "@components/ResearchHighlights.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SOCIALS } from "@config";
 import { astroPhotos } from "../data/astrophotography";
@@ -51,13 +52,14 @@ const socialCount = SOCIALS.length;
         </div>
 
         <div class="hero-introduction">
-          <p>Hi! Welcome to my website.</p>
           <p>
-            This space is for presenting my public research in <strong
-              >malware analysis</strong
-            >, <strong>vulnerability research</strong>, and <strong
-              >cyber threat intelligence</strong
-            >, with a focus on industrial systems and critical infrastructure.
+            I'm Sam Hanson, a cybersecurity researcher focused on industrial
+            systems and critical infrastructure.
+          </p>
+          <p>
+            I publish research in <strong>malware analysis</strong>, <strong
+              >vulnerability research</strong
+            >, and <strong>cyber threat intelligence</strong> here.
           </p>
           {
             // only display if at least one social link is enabled
@@ -74,29 +76,8 @@ const socialCount = SOCIALS.length;
 
     <Hr />
 
-    <section id="night-sky">
-      <div>
-        <h2>Astro Gallery</h2>
-        <p>Explore my astrophotography and the details behind each capture.</p>
-        <a href="/astrophotography/"
-          >Explore the gallery <span aria-hidden="true">→</span></a
-        >
-      </div>
-      {
-        astroPhotos.length > 0 && (
-          <a
-            class="sky-preview"
-            href="/astrophotography/"
-            aria-label="View astrophotography gallery"
-          >
-            <img
-              src={astroPhotos[0].src}
-              alt={astroPhotos[0].alt}
-              loading="lazy"
-            />
-          </a>
-        )
-      }
+    <section id="selected-work">
+      <ResearchHighlights homepage />
     </section>
 
     <Hr />
@@ -151,6 +132,33 @@ const socialCount = SOCIALS.length;
         </svg>
       </LinkButton>
     </div>
+
+    <Hr />
+
+    <section id="night-sky">
+      <div>
+        <h2>Astro Gallery</h2>
+        <p>Explore my astrophotography and the details behind each capture.</p>
+        <a href="/astrophotography/"
+          >Explore the gallery <span aria-hidden="true">→</span></a
+        >
+      </div>
+      {
+        astroPhotos.length > 0 && (
+          <a
+            class="sky-preview"
+            href="/astrophotography/"
+            aria-label="View astrophotography gallery"
+          >
+            <img
+              src={astroPhotos[0].src}
+              alt={astroPhotos[0].alt}
+              loading="lazy"
+            />
+          </a>
+        )
+      }
+    </section>
   </main>
 
   <Footer />

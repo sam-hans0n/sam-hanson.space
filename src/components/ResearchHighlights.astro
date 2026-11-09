@@ -1,4 +1,10 @@
 ---
+export interface Props {
+  homepage?: boolean;
+}
+
+const { homepage = false } = Astro.props;
+
 const projects = [
   {
     category: "Malware analysis",
@@ -44,7 +50,9 @@ const projects = [
 <section class="research-highlights" aria-labelledby="selected-research">
   <div class="section-heading">
     <h2 id="selected-research">Selected research</h2>
-    <a href="#threat-hunting">Full list ↓</a>
+    <a href={homepage ? "/posts/public-research/" : "#threat-hunting"}>
+      {homepage ? "All public research →" : "Full list ↓"}
+    </a>
   </div>
   <div class="project-grid">
     {
@@ -62,14 +70,18 @@ const projects = [
       ))
     }
   </div>
-  <nav class="research-sections" aria-label="Research categories">
-    <a href="#threat-hunting">Threat hunting</a>
-    <a href="#malware-analysis">Malware analysis</a>
-    <a href="#vulnerability-research">Vulnerabilities</a>
-    <a href="#conferences">Conferences</a>
-    <a href="#webinars">Webinars</a>
-    <a href="#media-coverage">Media</a>
-  </nav>
+  {
+    !homepage && (
+      <nav class="research-sections" aria-label="Research categories">
+        <a href="#threat-hunting">Threat hunting</a>
+        <a href="#malware-analysis">Malware analysis</a>
+        <a href="#vulnerability-research">Vulnerabilities</a>
+        <a href="#conferences">Conferences</a>
+        <a href="#webinars">Webinars</a>
+        <a href="#media-coverage">Media</a>
+      </nav>
+    )
+  }
 </section>
 
 <style>
