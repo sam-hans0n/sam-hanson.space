@@ -38,6 +38,7 @@ const socialImageURL = new URL(
 <html
   lang=`${LOCALE.lang ?? "en"}`
   class={`${scrollSmooth && "scroll-smooth"}`}
+  data-theme="dark"
 >
   <head>
     <meta charset="UTF-8" />
@@ -97,7 +98,7 @@ const socialImageURL = new URL(
       rel="stylesheet"
     />
 
-    <meta name="theme-color" content="" />
+    <meta name="theme-color" content="#000000" />
 
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
@@ -112,8 +113,6 @@ const socialImageURL = new URL(
     }
 
     <ClientRouter />
-
-    <script is:inline src="/toggle-theme.js"></script>
   </head>
   <body>
     <TwinkleSky starCount={76} />
