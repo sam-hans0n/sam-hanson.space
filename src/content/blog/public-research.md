@@ -1,7 +1,7 @@
 ---
 author: Sam Hanson
 pubDatetime: 2024-07-17T11:43:26.066Z
-modDatetime: 2026-04-22T01:43:26.066Z
+modDatetime: 2026-11-09T06:39:17.000Z
 title: Public Research
 slug: public-research
 featured: true
@@ -44,6 +44,7 @@ Here are malware analysis projects I've worked on as a reverse engineer at Drago
 
 For a full listing of CVEs I've discovered, please see my ["CVEs Discovered"](/posts/cves-discovered/) page.
 
+- [What Frontier AI Can Do in OT: Our Work with OpenAI](/posts/frontier-ai-in-ot-with-openai/): Coauthored whitepaper on controlled evaluations of frontier models in industrial environments.
 - [Suggested Practices to Defend Against DLL Hijacking](https://hub.dragos.com/hubfs/116-Whitepapers/Dragos_WP_DLL_Hijacking_FINAL.pdf?hsLang=en)
 - [Root Cause Analysis of Password "Cracking" Vulnerabilities Section, Dragos Year-in-Review 2022](https://hub.dragos.com/hubfs/312-Year-in-Review/2022/Dragos_Year-In-Review-Report-2022.pdf?hsLang=en) (starts on p.37)
 
@@ -61,7 +62,7 @@ I've presented at several in person conferences, including:
   - [DISC '26: Fly on the Wall](https://events.dragos.com/disc2026/agenda)
   - DISC '24: Hunting for Future ICS Threats
   - DISC'23: When Pythons Attack: The Hunting and Analysis of ICS-related, Compiled Python Samples
-  - DISC'23: PIPEDREAM Analysis
+  - DISC'22: PIPEDREAM Analysis
   - DISC'22: Malware, 0 Days, and PLCs, Oh Boy!
 - [BSides Zurich: PLC Password Cracking Malware](/bszh22-Sam_Hanson-Malware-Zero-Days-and-PLCs-Oh-Boy.pdf)
 
