@@ -30,7 +30,13 @@ One of the clearest results came from a mock power plant range. With very little
 
 The assessments explored firmware analysis, a partial rebuild of a PIPEDREAM malware module, and activity reaching Stage 2 of the ICS Cyber Kill Chain. They also documented false positives and cases where model activity crashed devices. The results needed human validation and the guardrails of a lab.
 
-OpenAI's GPT-6 Cyber announcement discusses the Dragos collaboration in its section on defending critical infrastructure. OpenAI describes using our feedback to refine safeguards around dangerous requests while preserving access for authorized defenders.
+## What OpenAI said about the Dragos work
+
+> “Dragos put a frontier model on a mock power plant range and told it almost nothing.”
+>
+> — Rob T. Lee, Chief AI Officer, Dragos, in [OpenAI's GPT-6 Cyber announcement](https://openai.com/index/introducing-gpt-6-cyber/#defending-critical-infrastructure)
+
+In that section, OpenAI describes the controlled Dragos evaluations, from network discovery and asset enumeration through more sensitive and potentially dangerous device actions. It says our feedback helped refine safeguards so the models can still support authorized industrial security testing while restricting harmful assistance. [Read the full section on OpenAI's site.](https://openai.com/index/introducing-gpt-6-cyber/#defending-critical-infrastructure)
 
 Frontier models are already useful for technical tasks such as reverse engineering and network reconnaissance. But many efforts still require iterative development and validation against real systems. This is not a simple “prompt and be done” process; expert review is still needed in many cases.
 
