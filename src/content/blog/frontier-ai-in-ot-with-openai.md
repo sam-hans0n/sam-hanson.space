@@ -32,7 +32,7 @@ The assessments explored firmware analysis, a partial rebuild of a PIPEDREAM mal
 
 ## What OpenAI said about the Dragos work
 
-> “Dragos put a frontier model on a mock power plant range and told it almost nothing.”
+> “Working with OpenAI on this shows them the adversary’s path through an OT network before real adversaries take it, so safeguards get built around how these attacks could unfold, while the models stay useful to the people defending these systems.”
 >
 > — Rob T. Lee, Chief AI Officer, Dragos, in [OpenAI's GPT-6 Cyber announcement](https://openai.com/index/introducing-gpt-6-cyber/#defending-critical-infrastructure)
 
