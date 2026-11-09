@@ -57,6 +57,8 @@ I've presented at several in person conferences, including:
 - [DEF CON 33: Don't Cry Wolf: Evidence-based Assessments of ICS Threats](https://www.youtube.com/embed/6U_CepoMSl4?si=FRzmDYQyY7Xs-iZu)
 - [BSides Twin Cities: History of ICS-Specific Malware](/BSides-TC.pdf)
 - Dragos:
+  - [DISC '26: Do You See What I See?: A Year of ICS Slopcode](https://events.dragos.com/disc2026/agenda) (with Jimmy Wylie and Carolyn Ahlers)
+  - [DISC '26: Fly on the Wall](https://events.dragos.com/disc2026/agenda)
   - DISC '24: Hunting for Future ICS Threats
   - DISC'23: When Pythons Attack: The Hunting and Analysis of ICS-related, Compiled Python Samples
   - DISC'23: PIPEDREAM Analysis
